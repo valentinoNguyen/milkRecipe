@@ -1,3 +1,7 @@
-<p>
-  topping works!
-</p>
+<mat-card class="card" [class.selected]="selectedToppingId === topping.id" 
+    *ngFor="let topping of toppings" matRipple (click)="selectTopping(topping)">
+    <mat-card-header>
+        <div mat-card-avatar class="image" [style.background-image]="'url(' + topping.image + ')'"></div>
+        <mat-card-title>{{topping.name}}</mat-card-title>
+    </mat-card-header>
+</mat-card>

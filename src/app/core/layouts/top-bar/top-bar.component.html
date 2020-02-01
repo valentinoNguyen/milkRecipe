@@ -1,8 +1,10 @@
 <div class="top-bar d-flex align-items-center justify-content-around">
-    <button mat-icon-button color="primary">
-        <i class="fa fa-ellipsis-v"></i>
+    <button mat-icon-button color="primary" (click)="back()">
+        <i class="fa" *ngIf="menuService.stage !== Stage.Drink"
+            [class.fa-chevron-left]="menuService.stage !== Stage.Drink"
+        ></i>
     </button>
-    <h3>Select Drink</h3>
+    <h3>{{title}}</h3>
     <button mat-icon-button color="primary">
         <i class="fa fa-plus"></i>
     </button>
