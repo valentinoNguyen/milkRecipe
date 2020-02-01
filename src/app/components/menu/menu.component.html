@@ -1,0 +1,15 @@
+<mat-form-field class="search-form">
+    <input matInput type="text" placeholder="Search drink" [formControl]="searchControl">
+    <button mat-button *ngIf="searchControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="clearSearch()">
+        <i class="fa fa-times"></i>
+    </button>
+</mat-form-field>
+
+<mat-card class="card" [class.selected]="selectedDrinkId === drink.id" 
+    *ngFor="let drink of drinkResults" matRipple (click)="selectDrink(drink)">
+    <mat-card-header>
+        <div mat-card-avatar class="image" [style.background-image]="'url(' + drink.image + ')'"></div>
+        <mat-card-title>{{drink.name}}</mat-card-title>
+    </mat-card-header>
+</mat-card>
+  

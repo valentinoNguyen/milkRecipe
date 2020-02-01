@@ -1,0 +1,23 @@
+@import 'variable';
+.search-form {
+    width: 100%;
+    margin-top: 10px;
+    i {
+        color: $black !important;
+    }
+}
+
+.card {
+    width: 100%;
+    margin-bottom: 5px;
+
+    .image {
+        background-size: cover;
+    }
+
+    &.selected {
+        background-color: $cyan;
+    }
+}
+
+
