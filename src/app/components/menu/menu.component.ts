@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+    selector: 'app-menu',
+    templateUrl: './menu.component.html',
+    styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+    constructor(private menuService: MenuService) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.menuService.getDrinks().subscribe(res => {
+            console.log(res);
+        });
+    }
 
 }

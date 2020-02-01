@@ -1,10 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Drink } from '../models/drink.model';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class MenuService {
 
-constructor() { }
+    constructor(
+        private _httpClient: HttpClient
+    ) { }
 
+    getDrinks(): Observable<Drink[]> {
+        return this._httpClient.get<Drink[]>('assets/datas/drinks.json');
+    }
 }
