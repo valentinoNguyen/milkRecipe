@@ -16,6 +16,9 @@ export class TopBarComponent {
         if (stage === Stage.Drink) {
             return 'Select Drink';
         }
+        if (stage === Stage.Size) {
+            return 'Size';
+        }
         if (stage === Stage.Topping) {
             return 'Topping';
         }
