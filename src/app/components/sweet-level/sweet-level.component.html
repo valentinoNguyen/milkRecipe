@@ -1,0 +1,7 @@
+<mat-card class="card" [class.selected]="menuService.drinkRequirement.sweetLevel === sweetLevel.value" 
+    *ngFor="let sweetLevel of sweetLevels" matRipple (click)="selectSweetLevel(sweetLevel.value)">
+    <mat-card-header>
+        <!-- <div mat-card-avatar class="image" [style.background-image]="'url(' + topping.image + ')'"></div> -->
+        <mat-card-title>{{sweetLevel.label}}</mat-card-title>
+    </mat-card-header>
+</mat-card>

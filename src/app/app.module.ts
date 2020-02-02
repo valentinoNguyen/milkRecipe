@@ -18,6 +18,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatRippleModule } from '@angular/material/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ToppingComponent } from './components/topping/topping.component';
+import { IceLevelComponent } from './components/ice-level/ice-level.component';
+import { SweetLevelComponent } from './components/sweet-level/sweet-level.component';
+import { SizeComponent } from './components/size/size.component';
 
 @NgModule({
     declarations: [
@@ -27,6 +30,9 @@ import { ToppingComponent } from './components/topping/topping.component';
         MenuComponent,
         RecipeComponent,
         ToppingComponent,
+        IceLevelComponent,
+        SweetLevelComponent,
+        SizeComponent,
     ],
     imports: [
         BrowserModule,

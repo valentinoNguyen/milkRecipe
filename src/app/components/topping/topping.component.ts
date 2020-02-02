@@ -9,8 +9,9 @@ import { Topping } from 'src/app/models/topping.model';
 })
 export class ToppingComponent implements OnInit {
     toppings: Topping[];
-    selectedToppingId: number;
-    constructor(private menuService: MenuService) { }
+    constructor(
+        public menuService: MenuService
+    ) { }
 
     ngOnInit() {
         this.menuService.getToppings().subscribe(toppings => {
@@ -20,6 +21,13 @@ export class ToppingComponent implements OnInit {
     }
 
     selectTopping(topping: Topping) {
-        this.selectedToppingId = topping.id;
+        const { id } = topping;
+        const hasSelected = this.menuService.drinkRequirement.toppings.includes(id);
+        if (hasSelected) {
+            this.menuService.drinkRequirement.toppings =
+                this.menuService.drinkRequirement.toppings.filter(t => t !== id);
+        } else {
+            this.menuService.drinkRequirement.toppings.push(id);
+        }
     }
 }

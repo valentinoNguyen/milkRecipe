@@ -4,13 +4,23 @@ import { Observable } from 'rxjs';
 import { Drink } from '../models/drink.model';
 import { Router } from '@angular/router';
 import { Topping } from '../models/topping.model';
+import { IceLevel, SweetLevel, Size } from '../models/menu.enum';
 
 export enum Stage {
     Drink,
+    Size,
     Topping,
     Ice,
     Sweet,
     Recipe,
+}
+
+export interface DrinkRequirement {
+    drinkId: number;
+    toppings?: number[];
+    size: Size;
+    iceLevel: IceLevel;
+    sweetLevel: SweetLevel;
 }
 
 @Injectable({
@@ -18,6 +28,7 @@ export enum Stage {
 })
 export class MenuService {
     stage: Stage;
+    drinkRequirement: DrinkRequirement;
 
     constructor(
         private _httpClient: HttpClient,
@@ -36,6 +47,11 @@ export class MenuService {
 
     next() {
         if (this.stage === Stage.Drink) {
+            this.stage = Stage.Size;
+            this._router.navigate(['/size']);
+            return;
+        }
+        if (this.stage === Stage.Size) {
             this.stage = Stage.Topping;
             this._router.navigate(['/topping']);
             return;
@@ -58,9 +74,14 @@ export class MenuService {
     }
 
     back() {
-        if (this.stage === Stage.Topping) {
+        if (this.stage === Stage.Size) {
             this.stage = Stage.Drink;
             this._router.navigate(['/menu']);
+            return;
+        }
+        if (this.stage === Stage.Topping) {
+            this.stage = Stage.Size;
+            this._router.navigate(['/size']);
             return;
         }
         if (this.stage === Stage.Ice) {
@@ -83,5 +104,12 @@ export class MenuService {
     reset() {
         this.stage = Stage.Drink;
         this._router.navigate(['/menu']);
+        this.drinkRequirement = {
+            drinkId: null,
+            size: Size.Regular,
+            iceLevel: IceLevel.Regular,
+            sweetLevel: SweetLevel.Regular,
+            toppings: []
+        };
     }
 }

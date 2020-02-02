@@ -11,13 +11,13 @@ import { FormControl } from '@angular/forms';
 export class MenuComponent implements OnInit {
     drinks: Drink[];
     drinkResults: Drink[];
-    selectedDrinkId: number;
     searchControl = new FormControl();
-    constructor(private menuService: MenuService) { }
+    constructor(
+        public menuService: MenuService
+    ) { }
 
     ngOnInit() {
         this.menuService.getDrinks().subscribe(drinks => {
-            console.log(drinks);
             this.drinks = [...drinks];
             this.drinkResults = [...drinks];
         });
@@ -33,7 +33,7 @@ export class MenuComponent implements OnInit {
     }
 
     selectDrink(drink: Drink) {
-        this.selectedDrinkId = drink.id;
+        this.menuService.drinkRequirement.drinkId = drink.id;
     }
 
     clearSearch() {

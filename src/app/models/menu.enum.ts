@@ -4,6 +4,7 @@ export enum Size {
 }
 
 export enum IceLevel {
+    Regular = 'Regular',
     LessIce = 'LessIce',
     NoIce = 'NoIce',
 }

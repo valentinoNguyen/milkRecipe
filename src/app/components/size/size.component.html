@@ -1,0 +1,7 @@
+<mat-card class="card" [class.selected]="menuService.drinkRequirement.size === size.value" 
+    *ngFor="let size of sizes" matRipple (click)="selectSize(size.value)">
+    <mat-card-header>
+        <!-- <div mat-card-avatar class="image" [style.background-image]="'url(' + topping.image + ')'"></div> -->
+        <mat-card-title>{{size.label}}</mat-card-title>
+    </mat-card-header>
+</mat-card>
