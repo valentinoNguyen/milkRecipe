@@ -1,6 +1,7 @@
 export enum Size {
     Large = 'Large',
     Regular = 'Regular',
+    Small = 'Small',
 }
 
 export enum IceLevel {
@@ -18,5 +19,7 @@ export enum SweetLevel {
 
 export enum MPLevel {
     Small = 'Small',
+    Large = 'Large',
+    Medium = 'Medium',
     tps2 = '2tsp',
 }
