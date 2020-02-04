@@ -26,7 +26,7 @@ export class SizeComponent implements OnInit {
     }
 
     selectSize(size: Size) {
-        this.menuService.drinkRequirement.size = size;
+        this.menuService.orderRequirement.size = size;
     }
 
 }

@@ -27,7 +27,7 @@ export class MenuService {
   drinkHash: Dictionary<Drink>;
   toppingHash: Dictionary<Topping>;
   recipes: Recipe[];
-  drinkRequirement: OrderRequirement;
+  orderRequirement: OrderRequirement;
 
   constructor(
     private _httpClient: HttpClient,
@@ -122,7 +122,7 @@ export class MenuService {
   reset() {
     this.stage = Stage.Drink;
     this._router.navigate(['/menu']);
-    this.drinkRequirement = {
+    this.orderRequirement = {
       drinkId: null,
       size: Size.Regular,
       iceLevel: IceLevel.Regular,

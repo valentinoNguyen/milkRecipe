@@ -35,7 +35,7 @@ export class SweetLevelComponent implements OnInit {
     }
 
     selectSweetLevel(sweetLevel: SweetLevel) {
-        this.menuService.drinkRequirement.sweetLevel = sweetLevel;
+        this.menuService.orderRequirement.sweetLevel = sweetLevel;
     }
 
 }

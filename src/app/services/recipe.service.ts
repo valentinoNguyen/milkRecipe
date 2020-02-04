@@ -5,8 +5,9 @@ import { Observable } from 'rxjs';
 import { Drink } from '../models/drink.model';
 import { Router } from '@angular/router';
 import { Topping } from '../models/topping.model';
-import { IceLevel, SweetLevel, Size } from '../models/menu.enum';
+import { IceLevel, SweetLevel, Size, MPLevel } from '../models/menu.enum';
 import { OrderRequirement } from '../models/order-requirement.model';
+import { Recipe, upgradeMP } from '../models/recipe.model';
 
 export enum Stage {
   Drink,
@@ -22,24 +23,15 @@ export enum Stage {
 })
 export class RecipeService {
   stage: Stage;
-  drinkRequirement: OrderRequirement;
+  orderRequirement: OrderRequirement;
 
   constructor(
     private _menuService: MenuService
   ) {
   }
 
-  getSelectedToppingsByDrink(drinkId: number): Topping[] {
-    const { recipes } = this._menuService;
-    const drink = recipes.find(d => d.drinkId === drinkId);
-    if (!drink) {
-      return [];
-    }
-    return drink.toppings;
-  }
-
-  getFinalRecipe(orderRequirement: OrderRequirement): any {
-    const { recipes, drinkHash, toppingHash } = this._menuService;
+  getRecipeByDrink(orderRequirement: OrderRequirement): Recipe {
+    const { recipes, toppingHash } = this._menuService;
     const drink = recipes.find(d => d.drinkId === orderRequirement.drinkId);
     if (drink) {
       const allDrinkRecipes = recipes.filter(r => r.drinkId === orderRequirement.drinkId);
@@ -61,5 +53,38 @@ export class RecipeService {
       }
     }
     return null;
+  }
+
+  getFinalRecipe(recipe: Recipe, orderRequirement: OrderRequirement): Recipe {
+    const { sweetLevel, iceLevel, size } = orderRequirement;
+    const finalRecipe = { ...recipe };
+    const { toppingHash } = this._menuService;
+    finalRecipe.toppings = orderRequirement.toppings.map(toppingId => {
+      const topping = toppingHash[toppingId];
+      return {
+        ...topping,
+        value: topping.sizeValue[size]
+      };
+    });
+    // Sweet level
+    if (sweetLevel === SweetLevel.Less) {
+      finalRecipe.honey = finalRecipe.honey - 0.2;
+    }
+    if (sweetLevel === SweetLevel.Half) {
+      finalRecipe.honey = finalRecipe.honey - 0.4;
+    }
+    if (sweetLevel === SweetLevel.Little) {
+      finalRecipe.honey = finalRecipe.honey - 0.6;
+    }
+    // Ice level
+    if (iceLevel === IceLevel.LessIce) {
+      finalRecipe.tea = finalRecipe.tea + 40;
+    }
+    if (iceLevel === IceLevel.NoIce) {
+      finalRecipe.tea = finalRecipe.tea + 60;
+      finalRecipe.mp = upgradeMP(finalRecipe.mp);
+    }
+
+    return finalRecipe;
   }
 }

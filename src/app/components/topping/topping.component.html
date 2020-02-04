@@ -1,4 +1,4 @@
-<mat-card class="card" [class.selected]="menuService.drinkRequirement.toppings.includes(topping.id)" 
+<mat-card class="card" [class.selected]="menuService.orderRequirement.toppings.includes(topping.id)" 
     *ngFor="let topping of toppings" matRipple (click)="selectTopping(topping)">
     <mat-card-header>
         <div mat-card-avatar class="image" [style.background-image]="'url(' + topping.image + ')'"></div>

@@ -22,12 +22,12 @@ export class ToppingComponent implements OnInit {
 
     selectTopping(topping: Topping) {
         const { id } = topping;
-        const hasSelected = this.menuService.drinkRequirement.toppings.includes(id);
+        const hasSelected = this.menuService.orderRequirement.toppings.includes(id);
         if (hasSelected) {
-            this.menuService.drinkRequirement.toppings =
-                this.menuService.drinkRequirement.toppings.filter(t => t !== id);
+            this.menuService.orderRequirement.toppings =
+                this.menuService.orderRequirement.toppings.filter(t => t !== id);
         } else {
-            this.menuService.drinkRequirement.toppings.push(id);
+            this.menuService.orderRequirement.toppings.push(id);
         }
     }
 }

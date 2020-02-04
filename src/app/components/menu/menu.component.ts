@@ -33,7 +33,7 @@ export class MenuComponent implements OnInit {
     }
 
     selectDrink(drink: Drink) {
-        this.menuService.drinkRequirement.drinkId = drink.id;
+        this.menuService.orderRequirement.drinkId = drink.id;
     }
 
     clearSearch() {

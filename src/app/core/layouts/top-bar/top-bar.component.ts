@@ -35,4 +35,8 @@ export class TopBarComponent {
         this.menuService.back();
     }
 
+    reset() {
+      this.menuService.reset();
+    }
+
 }

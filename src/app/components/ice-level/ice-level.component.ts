@@ -30,7 +30,7 @@ export class IceLevelComponent implements OnInit {
     }
 
     selectIceLevel(iceLevel: IceLevel) {
-        this.menuService.drinkRequirement.iceLevel = iceLevel;
+        this.menuService.orderRequirement.iceLevel = iceLevel;
     }
 
 }

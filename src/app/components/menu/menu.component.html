@@ -5,7 +5,7 @@
     </button>
 </mat-form-field>
 
-<mat-card class="card" [class.selected]="menuService.drinkRequirement.drinkId === drink.id" 
+<mat-card class="card" [class.selected]="menuService.orderRequirement.drinkId === drink.id" 
     *ngFor="let drink of drinkResults" matRipple (click)="selectDrink(drink)">
     <mat-card-header>
         <div mat-card-avatar class="image" [style.background-image]="'url(' + drink.image + ')'"></div>

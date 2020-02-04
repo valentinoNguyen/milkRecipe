@@ -9,3 +9,16 @@ export interface Recipe {
     mp: MPLevel;
     toppings: ToppingRecipe[];
 }
+
+export function upgradeMP(mp: MPLevel): MPLevel {
+  if (mp === MPLevel.Small) {
+    return MPLevel.Medium;
+  }
+  if (mp === MPLevel.Medium) {
+    return MPLevel.Large;
+  }
+  if (mp === MPLevel.Large) {
+    return MPLevel.tps2;
+  }
+  return mp;
+}

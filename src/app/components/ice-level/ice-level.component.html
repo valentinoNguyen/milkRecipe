@@ -1,4 +1,4 @@
-<mat-card class="card" [class.selected]="menuService.drinkRequirement.iceLevel === iceLevel.value" 
+<mat-card class="card" [class.selected]="menuService.orderRequirement.iceLevel === iceLevel.value" 
     *ngFor="let iceLevel of iceLevels" matRipple (click)="selectIceLevel(iceLevel.value)">
     <mat-card-header>
         <!-- <div mat-card-avatar class="image" [style.background-image]="'url(' + topping.image + ')'"></div> -->
