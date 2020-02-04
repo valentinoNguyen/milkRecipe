@@ -1,7 +1,6 @@
 export enum Size {
     Large = 'Large',
     Regular = 'Regular',
-    Small = 'Small',
 }
 
 export enum IceLevel {
