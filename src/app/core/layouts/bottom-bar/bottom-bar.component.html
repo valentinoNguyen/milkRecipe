@@ -1,3 +1,5 @@
 <div class="top-bar d-flex align-items-center justify-content-center">
-    <button mat-raised-button color="warn" (click)="next()">Next</button>
+    <button mat-raised-button color="warn" (click)="nextOrNewDrink()">
+        {{menuService.stage !== Stage.Recipe ? 'Next' : 'New Drink'}}
+    </button>
 </div>

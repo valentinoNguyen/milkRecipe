@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuService } from 'src/app/services/menu.service';
 import { Drink } from 'src/app/models/drink.model';
 import { FormControl } from '@angular/forms';
+import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
     selector: 'app-menu',
@@ -13,7 +14,8 @@ export class MenuComponent implements OnInit {
     drinkResults: Drink[];
     searchControl = new FormControl();
     constructor(
-        public menuService: MenuService
+        public menuService: MenuService,
+        public recipeService: RecipeService,
     ) { }
 
     ngOnInit() {
@@ -34,6 +36,8 @@ export class MenuComponent implements OnInit {
 
     selectDrink(drink: Drink) {
         this.menuService.orderRequirement.drinkId = drink.id;
+        this.menuService.orderRequirement.toppings =
+            this.recipeService.getToppingsByDrink(drink.id).map(t => t.id);
     }
 
     clearSearch() {

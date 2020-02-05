@@ -15,7 +15,6 @@ export class ToppingComponent implements OnInit {
 
     ngOnInit() {
         this.menuService.getToppings().subscribe(toppings => {
-            console.log(toppings);
             this.toppings = [...toppings];
         });
     }

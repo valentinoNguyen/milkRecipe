@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from 'src/app/services/menu.service';
+import { MenuService, Stage } from 'src/app/services/menu.service';
 
 @Component({
     selector: 'app-bottom-bar',
@@ -7,12 +7,15 @@ import { MenuService } from 'src/app/services/menu.service';
     styleUrls: ['./bottom-bar.component.scss']
 })
 export class BottomBarComponent {
-
-    constructor(private menuService: MenuService) {
+    Stage = Stage;
+    constructor(public menuService: MenuService) {
     }
 
-    next() {
-        this.menuService.next();
+    nextOrNewDrink() {
+        if (this.menuService.stage !== Stage.Recipe) {
+            this.menuService.next();
+        } else {
+            this.menuService.reset();
+        }
     }
-
 }

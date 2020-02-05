@@ -1,3 +1,21 @@
-<p>
-  recipe works!
-</p>
+<mat-card>
+    <mat-card-header class="d-flex justify-content-center">
+        <mat-card-title>{{drink.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="drink.image" [alt]="drink.name">
+    <mat-card-content>
+        <div class="d-flex line">
+            <p><strong>Tea:</strong> {{recipe.tea}}</p>
+            <p><strong>Honey:</strong> {{recipe.honey}}</p>
+        </div>
+        <div class="d-flex line">
+            <p><strong>Milk Powder:</strong> {{recipe.mp}}</p>
+        </div>
+        <p><strong>Toppings:</strong></p>
+        <ul>
+            <li *ngFor="let topping of recipe.toppings">
+                <div class="topping-name"><strong>{{topping.name}}:</strong></div> {{topping.value}}
+            </li>
+        </ul>
+    </mat-card-content>
+</mat-card>
