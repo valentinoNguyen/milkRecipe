@@ -1,0 +1,92 @@
+[
+  {
+    "drinkId": 1,
+    "level": 1,
+    "tea": 140,
+    "honey": 0.6,
+    "mp": "Small",
+    "toppings": [
+      {
+        "id": 4,
+        "value": 80
+      },
+      {
+        "id": 7,
+        "value": 50
+      },
+      {
+        "id": 1,
+        "value": 100
+      }
+    ]
+  },
+  {
+    "drinkId": 1,
+    "level": 2,
+    "tea": 100,
+    "honey": 0.4,
+    "mp": "2tsp",
+    "toppings": [
+      {
+        "id": 4,
+        "value": 60
+      },
+      {
+        "id": 7,
+        "value": 40
+      },
+      {
+        "id": 1,
+        "value": 80
+      }
+    ]
+  },
+  {
+    "drinkId": 2,
+    "level": 1,
+    "tea": 220,
+    "honey": 1.4,
+    "mp": "Large",
+    "toppings": []
+  },
+  {
+    "drinkId": 2,
+    "level": 2,
+    "tea": 160,
+    "honey": 1,
+    "mp": "Medium",
+    "toppings": []
+  },
+  {
+    "drinkId": 2,
+    "level": 3,
+    "tea": 120,
+    "honey": 0.8,
+    "mp": "Small",
+    "toppings": []
+  },
+  {
+    "drinkId": 3,
+    "level": 1,
+    "tea": 280,
+    "honey": 1.4,
+    "mp": "Large",
+    "toppings": []
+  },
+  {
+    "drinkId": 3,
+    "level": 2,
+    "tea": 220,
+    "honey": 1,
+    "mp": "Medium",
+    "toppings": []
+  },
+  {
+    "drinkId": 3,
+    "level": 3,
+    "tea": 160,
+    "honey": 0.8,
+    "mp": "Small",
+    "toppings": []
+  }
+]
