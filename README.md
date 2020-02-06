@@ -22,6 +22,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Deployment step
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `npm install -g angular-cli-ghpages`
+Run `ng build --prod --base-href https://valentinonguyen.github.io/milkRecipe/`
+Run `angular-cli-ghpages -d dist/MilkTeaRecipe/ --no-silent`
+
+Then navigate to https://valentinonguyen.github.io/milkRecipe
