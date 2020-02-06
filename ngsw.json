@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1580982670969,
+  "timestamp": 1580983244109,
   "index": "https://valentinonguyen.github.io/milkRecipe/index.html",
   "assetGroups": [
     {
@@ -70,7 +70,7 @@
     "https://valentinonguyen.github.io/milkRecipe/fontawesome-webfont.af7ae505a9eed503f8b8.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
     "https://valentinonguyen.github.io/milkRecipe/fontawesome-webfont.b06871f281fee6b241d6.ttf": "13b1eab65a983c7a73bc7997c479d66943f7c6cb",
     "https://valentinonguyen.github.io/milkRecipe/fontawesome-webfont.fee66e712a8a08eef580.woff": "28b782240b3e76db824e12c02754a9731a167527",
-    "https://valentinonguyen.github.io/milkRecipe/index.html": "ce92fb11d02d2760c31a84b1d1d7a1a184dbf36c",
+    "https://valentinonguyen.github.io/milkRecipe/index.html": "ce656cf397e70bcb03b62ca9ea12cb101b16d969",
     "https://valentinonguyen.github.io/milkRecipe/main-es2015.b3dfb2cfa3c83c98f82e.js": "fc3b9f942d79daadb9a035608409ccc9e531f01c",
     "https://valentinonguyen.github.io/milkRecipe/main-es5.b3dfb2cfa3c83c98f82e.js": "83b97e433afdd7c9fdda72b682a0c7967726ee87",
     "https://valentinonguyen.github.io/milkRecipe/manifest.webmanifest": "fe59c9bfe92b80782ba8dfa880d18fcbd78ed20f",
