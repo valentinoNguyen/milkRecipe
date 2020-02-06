@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1580983244109,
+  "timestamp": 1580988859758,
   "index": "https://valentinonguyen.github.io/milkRecipe/index.html",
   "assetGroups": [
     {
@@ -73,7 +73,7 @@
     "https://valentinonguyen.github.io/milkRecipe/index.html": "ce656cf397e70bcb03b62ca9ea12cb101b16d969",
     "https://valentinonguyen.github.io/milkRecipe/main-es2015.b3dfb2cfa3c83c98f82e.js": "fc3b9f942d79daadb9a035608409ccc9e531f01c",
     "https://valentinonguyen.github.io/milkRecipe/main-es5.b3dfb2cfa3c83c98f82e.js": "83b97e433afdd7c9fdda72b682a0c7967726ee87",
-    "https://valentinonguyen.github.io/milkRecipe/manifest.webmanifest": "fe59c9bfe92b80782ba8dfa880d18fcbd78ed20f",
+    "https://valentinonguyen.github.io/milkRecipe/manifest.webmanifest": "437531375d51e11eade2c39f439dba3757622824",
     "https://valentinonguyen.github.io/milkRecipe/polyfills-es2015.5b10b8fd823b6392f1fd.js": "9abfe15f17820a646e3d51c420908d9f8f7b69b8",
     "https://valentinonguyen.github.io/milkRecipe/polyfills-es5.8e50a9832860f7cf804a.js": "a9abcb7b9e74feed315773004b623373fdf3fada",
     "https://valentinonguyen.github.io/milkRecipe/runtime-es2015.c5fa8325f89fc516600b.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
